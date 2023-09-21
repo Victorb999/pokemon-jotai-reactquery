@@ -1,8 +1,16 @@
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
+import { Main } from "./pages/Main/Main";
+
+const queryClient = new QueryClient();
+
 export function App() {
   return (
-    <div className="font-semibold p-2">
-      <center>Vite ⚡+ React ⚛️ + Tailwindcss 🍃</center>
-    </div>
+    <QueryClientProvider client={queryClient}>
+        <Main />
+    </QueryClientProvider>
   );
 
 }
